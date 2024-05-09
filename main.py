@@ -1,3 +1,5 @@
+""" Count the number of words and the number of times each letter appears in a text file. """
+
 from collections import Counter
 
 
