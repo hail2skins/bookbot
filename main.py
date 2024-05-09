@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def main():
     """
     Read the text from the file at the given path and print a report of the
@@ -27,9 +28,9 @@ def get_book_text(path):
     """
     Read the text from the file at the given path and return it as a string.
     """
-    with open(path, encoding='utf-8') as f:
+    with open(path, encoding="utf-8") as f:
         return f.read()
-    
+
 
 def get_word_count(text):
     """
@@ -37,6 +38,7 @@ def get_word_count(text):
     """
     words = text.split()
     return len(words)
+
 
 def get_letter_count(text):
     """
@@ -55,13 +57,17 @@ def get_letter_count(text):
     #     else:
     #         letter_count[letter] = 1
     # return letter_count
-    return Counter(text.lower()) # This is a more concise way to do the same thing as above.
+    return Counter(
+        text.lower()
+    )  # This is a more concise way to do the same thing as above.
+
 
 def sort_on(d):
     """
     Sort a dictionary by the values in descending order.
     """
     return d["num"]
+
 
 def chars_dict_to_sorted_list(num_chars_dict):
     """
@@ -73,5 +79,6 @@ def chars_dict_to_sorted_list(num_chars_dict):
         sorted_list.append({"char": ch, "num": num_chars_dict[ch]})
     sorted_list.sort(reverse=True, key=sort_on)
     return sorted_list
-       
+
+
 main()
